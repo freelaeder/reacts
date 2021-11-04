@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      height: 80px;
+      position: sticky;
+      top: 0;
+      background: aqua;
+    }
+    main {
+      /* display: flex; */
+      scroll-snap-type: y mandatory;
+      /* scroll-snap-type: y proximity; */
+      /* 根据浏览器自己的规定的贴合 */
+      /*需要把滚动条设置到直接父容器
+      scroll-snap-type 才能生效
+      默认是在body 上， 现在是在main、
+      mandatory 强制滚动，只要滚动，就强制贴合
+      y 表示 
+      */
+      scroll-padding: 80px;
+      overflow: scroll;
+      height: 100vh;
+      width: 100vw;
+    }
+    section {
+      /* flex-shrink: 0; */
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+      line-height: 100vh;
+      color: #fff;
+      text-align: center;
+    }
+    section:nth-child(1){
+      background: red;
+    }
+    section:nth-child(2){
+      background: blue;
+    }
+    /* 假设第3个内容变长 */
+    section:nth-child(3){
+      height: 250vh;
+      background: gold;
+    }
+    section:nth-child(4){
+      background: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>title</h1>
+    <section>页面内容1</section>
+    <section>页面内容2</section>
+    <section>页面内容3</section>
+    <section>页面内容4</section>
+  </main>
+</body>
+</html>
