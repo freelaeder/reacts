@@ -1,15 +1,13 @@
-// 1 导入 react
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from 'react-dom'
 
-// 引入 css
-// import './index.css'
+// 抽离组件到单独的js文件中
 
-// ---------------------------------
-// 函数组件
-function Hello(){
-  return (
-    <div>one 函数组件</div>
-  )
-}
-ReactDOM.render(<Hello />,document.getElementById('root'))
+
+// 导入Hello
+
+import Hello from "./components/Hello";
+
+// 渲染组件
+
+ReactDOM.render(<Hello / > ,document.getElementById('root'))
