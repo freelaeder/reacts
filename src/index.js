@@ -1,13 +1,28 @@
 import React from "react";
 import ReactDOM from 'react-dom'
 
-// 抽离组件到单独的js文件中
+class App extends React.Component {
+  state = {
+    count : 0,
+    test :'a'
+  }
+  // 事件处理程序
+  onIncrement() {
+    this.setState ({
+      count: this.state.count + 2
+    })
+  }
 
+  // 渲染
+  render() {
+    return (
+      <div>
+        <h1>计数器： {this.state.count}</h1>
 
-// 导入Hello
+        <button onClick={() => this.onIncrement()}> + 2</button>
+      </div>
+    )
+  }
+}
 
-import Hello from "./components/Hello";
-
-// 渲染组件
-
-ReactDOM.render(<Hello / > ,document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
